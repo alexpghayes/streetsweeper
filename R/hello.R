@@ -1,18 +1,26 @@
-# Hello, world!
-#
-# This is an example function named 'hello' 
-# which prints 'Hello, world!'.
-#
-# You can learn more about package authoring with RStudio at:
-#
-#   http://r-pkgs.had.co.nz/
-#
-# Some useful keyboard shortcuts for package authoring:
-#
-#   Build and Reload Package:  'Cmd + Shift + B'
-#   Check Package:             'Cmd + Shift + E'
-#   Test Package:              'Cmd + Shift + T'
 
-hello <- function() {
-  print("Hello, world!")
+
+#' Title
+#'
+#' @param object
+#'
+#' @return asdf
+#' @importFrom broom tidy
+#' @export
+#'
+use_tidy_method_from_broom <- function(object) {
+  broom::tidy(object)
+}
+
+
+#' Title
+#'
+#' @param object
+#'
+#' @importFrom broom tidy
+#' @import broom.mixed
+#' @export
+use_tidy_method_from_broom.mixed <- function(object) {
+  # broom.mixed::tidy(object)  # doesn't work since broom.mixed doesn't export `tidy()`
+  tidy(object)
 }

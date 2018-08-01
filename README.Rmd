@@ -1,0 +1,30 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+```{r error = TRUE}
+lm_mod <- lm(hp ~ ., mtcars)
+data("sleepstudy", package = "lme4")
+mixed_mod <- lmerTest::lmer(Reaction ~ Days + (Days | Subject), sleepstudy)
+
+broom::tidy(mixed_mod)
+broom.mixed:::tidy.merMod(mixed_mod)
+
+streetsweeper::use_tidy_method_from_broom(lm_mod)
+streetsweeper::use_tidy_method_from_broom.mixed(mixed_mod)
+
+# so this works??
+streetsweeper::use_tidy_method_from_broom(mixed_mod)
+```
+
