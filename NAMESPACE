@@ -2,5 +2,5 @@
 
 export(use_tidy_method_from_broom)
 export(use_tidy_method_from_broom.mixed)
+import(broom)
 import(broom.mixed)
-importFrom(broom,tidy)

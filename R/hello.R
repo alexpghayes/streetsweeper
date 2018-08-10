@@ -5,7 +5,7 @@
 #' @param object
 #'
 #' @return asdf
-#' @importFrom broom tidy
+#' @import broom
 #' @export
 #'
 use_tidy_method_from_broom <- function(object) {
@@ -17,10 +17,9 @@ use_tidy_method_from_broom <- function(object) {
 #'
 #' @param object
 #'
-#' @importFrom broom tidy
+#' @import broom
 #' @import broom.mixed
 #' @export
 use_tidy_method_from_broom.mixed <- function(object) {
-  # broom.mixed::tidy(object)  # doesn't work since broom.mixed doesn't export `tidy()`
-  tidy(object)
+  broom.mixed::tidy(object)  # doesn't work since broom.mixed doesn't export `tidy()`
 }
